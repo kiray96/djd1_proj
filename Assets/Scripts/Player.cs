@@ -4,40 +4,40 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float acceleration = 10000.0f;
-    public float maxSpeed = 400.0f;
-    public float drag = 0.8f;
-    public Vector2 limit = new Vector2(600.0f, 300.0f);
+    public float moveS = 1000.0f;
 
-    Rigidbody2D rigidBody;
-    Vector3 moveVector;
-    Vector3 currentVelocity;
+    Rigidbody2D rigidB;
+    Animator anim;
 
-    void Awake()
+    void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
+        rigidB = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        currentVelocity = currentVelocity * drag;
+        float xAxis = Input.GetAxis("Horizontal");
+        Vector2 currentVelocity = rigidB.velocity;
 
-        currentVelocity = currentVelocity + moveVector * acceleration * Time.fixedDeltaTime;
+        currentVelocity = new Vector2(xAxis * moveS, currentVelocity.y);
 
-        currentVelocity = currentVelocity.normalized * Mathf.Min(currentVelocity.magnitude, maxSpeed);
-
-        Vector3 newPos = transform.position + currentVelocity * Time.fixedDeltaTime;
-        if (newPos.x > limit.x) newPos.x = limit.x;
-        else if (newPos.x < -limit.x) newPos.x = -limit.x;
-
-        if (newPos.y > limit.y) newPos.y = limit.y;
-        else if (newPos.y < -limit.y) newPos.y = -limit.y;
-
-        transform.position = newPos;
+        rigidB.velocity = currentVelocity;
     }
 
     private void Update()
     {
-        moveVector = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
+        Vector2 currentVelocity = rigidB.velocity;
+
+        if (currentVelocity.x < 0.0f)
+        {
+            transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+        }
+        else
+        {
+            transform.rotation = Quaternion.identity;
+        }
+
+        anim.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x));
     }
 }
