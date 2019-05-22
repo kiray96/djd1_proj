@@ -16,6 +16,8 @@ public class Attack : MonoBehaviour
     [SerializeField] float reachSpeed;
 
     [SerializeField] float attackCooldown;
+
+    [SerializeField] float timeBeforeDestruct;
     float currCooldown;
 
     // Start is called before the first frame update
@@ -40,7 +42,7 @@ public class Attack : MonoBehaviour
             b.reachSpd = reachSpeed;
             b.isProjectile = rangedAttack;
             b.origin = transform.position;
-
+            b.timeBeforeDestruct = this.timeBeforeDestruct;
             currCooldown = 0;
 
         }

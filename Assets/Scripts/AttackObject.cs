@@ -9,14 +9,14 @@ public class AttackObject : MonoBehaviour
 
     private Rigidbody2D rb;
    
-    public float dmg, lifeTime, reachSpd;
+    public float dmg, lifeTime, reachSpd, timeBeforeDestruct;
 
     
     public bool isProjectile;
 
     public Vector3 origin;
 
-    float timeBeforeDestruct = 2f;
+    
 
     float dist = 0.0f;
     // Start is called before the first frame update
