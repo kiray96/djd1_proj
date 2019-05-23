@@ -5,14 +5,17 @@ using UnityEngine;
 public class Army : MonoBehaviour
 {
 
-    protected EnumArmyStates currentState;
-    [SerializeField] protected int nTroops;
-    [SerializeField] protected float speed;
+    public EnumArmyStates currentState;
+    public int nTroops;
+    public float speedModifier = 1;
+
+    public float defenseModifier;
+    public float attackModifier;
 
     // How much mass is each soldier worth
     [SerializeField] protected float troopWeight;
 
 
-    protected float massModifier;
+    public float massModifier;
 
 }
