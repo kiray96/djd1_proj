@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Formation : MonoBehaviour
 {
-    float speedMod;
-    float atkMod;
-    float defMod;
-    float massMod;
+    protected Army armyScript;
 
-    EnumArmyStates currFormation;
+    [SerializeField]
+    protected float speedMod;
+
+    [SerializeField]
+    protected float atkMod;
+
+    [SerializeField]
+    protected float defMod;
+
+    [SerializeField]
+    protected float massMod;
+
+    protected EnumArmyStates currFormation;
+
+    [SerializeField]
+    protected bool playerControl = true;
+    
     void Start()
     {
-        
+        armyScript = GetComponent<Army>();
     }
 
     // Update is called once per frame
