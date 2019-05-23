@@ -40,10 +40,9 @@ public class AttackObject : MonoBehaviour
 
             if (dist < lifeTime)
             {
- 
-                rb.velocity = transform.right * reachSpd;
-                Debug.Log(dist);
-                
+
+               rb.velocity = transform.right * reachSpd;
+                //Debug.Log(dist); 
                
             }
             else if (dist >= lifeTime)

@@ -216,6 +216,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1191290747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7941284725254500143, guid: 6b051684348b00a4593d45776a4df53e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7941284725552104157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1191290748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191290747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1be6d858d8e49947a3b0798689dfbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldierPrefab: {fileID: 7583972339591323903, guid: 58a10fdeedd0a6240bafa27c95d2b076,
+    type: 3}
+  amountToShow: 300
+  trailLength: 0
 --- !u!1 &1290607868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,6 +2858,75 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941284725254500133, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941284725254500138, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941284725254500138, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: m_SpriteTileMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941284725254500138, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: m_AdaptiveModeThreshold
+      value: 0.145
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941284725254500138, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941284725254500138, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941284725254500138, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 7941284725254500139, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 633717913, guid: 6b051684348b00a4593d45776a4df53e, type: 3}
+      propertyPath: attackFreeze
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: speedMod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651265904662926811, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: atkMod
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651265904662926811, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: defMod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651265904662926811, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: playerControl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651265904662926811, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: speedMod
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b051684348b00a4593d45776a4df53e, type: 3}

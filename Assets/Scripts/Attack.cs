@@ -21,11 +21,21 @@ public class Attack : MonoBehaviour
     float currCooldown;
     Army armyScript;
 
+    [SerializeField] float attackFreeze;
+    float currAtkfrz;
+    float m;
+
+
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         armyScript = GetComponent<Army>();
         currCooldown = 0;
+        rb = GetComponent<Rigidbody2D>();
+        currAtkfrz = attackFreeze;
+        m = GetComponent<Player>().moveS;
+
     }
 
     // Update is called once per frame
@@ -33,8 +43,9 @@ public class Attack : MonoBehaviour
     {
 
         currCooldown += Time.deltaTime;
+        currAtkfrz += Time.deltaTime;
 
-        if(Input.GetAxis("Fire1") > 0 && currCooldown >= attackCooldown && playerControlled)
+        if (Input.GetAxis("Fire1") > 0 && currCooldown >= attackCooldown && playerControlled)
         {
             GameObject yeet = Instantiate(attackPrefab, transform.position, transform.rotation);
 
@@ -45,15 +56,31 @@ public class Attack : MonoBehaviour
             b.isProjectile = rangedAttack;
             b.origin = transform.position;
             b.timeBeforeDestruct = this.timeBeforeDestruct;
-            currCooldown = 0;
+            yeet.GetComponent<Rigidbody2D>().rotation = 0;
 
-            for(float i = 0; i<500; i += i *Time.deltaTime)
-            {
-                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            }
+            currCooldown = 0;
+            currAtkfrz = 0;
+            m = GetComponent<Player>().moveS;
 
         }
 
-        
+        if (currAtkfrz < attackFreeze)
+        {
+
+            GetComponent<Player>().moveS = 0;
+        }
+        else
+        {
+
+            GetComponent<Player>().moveS = m;
+
+        }
+
+        //Debug.Log(currAtkfrz);
+
+
+
+
     }
 }
+
