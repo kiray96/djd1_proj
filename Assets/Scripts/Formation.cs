@@ -22,8 +22,8 @@ public class Formation : MonoBehaviour
 
     [SerializeField]
     protected bool playerControl = true;
-    
-    void Start()
+
+    protected void Start()
     {
         armyScript = GetComponent<Army>();
     }
@@ -31,9 +31,21 @@ public class Formation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speedMod = Mathf.Clamp(speedMod, 0, 1);
+        speedMod = Mathf.Clamp(speedMod, 0, 2);
         atkMod = Mathf.Clamp(atkMod, 0, 1);
         defMod = Mathf.Clamp(defMod, 0, 1);
         massMod = Mathf.Clamp(massMod, 0, 1);
     }
+
+    protected void ActivateFormation()
+    {
+        armyScript.currentState = currFormation;
+        armyScript.defenseModifier = defMod;
+        armyScript.speedModifier = speedMod;
+        armyScript.attackModifier = atkMod;
+        armyScript.massModifier = massMod;
+
+    }
+
+   
 }
