@@ -19,10 +19,12 @@ public class Attack : MonoBehaviour
 
     [SerializeField] float timeBeforeDestruct;
     float currCooldown;
+    Army armyScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        armyScript = GetComponent<Army>();
         currCooldown = 0;
     }
 
@@ -37,13 +39,18 @@ public class Attack : MonoBehaviour
             GameObject yeet = Instantiate(attackPrefab, transform.position, transform.rotation);
 
             var b = yeet.GetComponentInChildren<AttackObject>();
-            b.dmg = damage;
+            b.dmg = damage * armyScript.attackModifier;
             b.lifeTime = reach;
             b.reachSpd = reachSpeed;
             b.isProjectile = rangedAttack;
             b.origin = transform.position;
             b.timeBeforeDestruct = this.timeBeforeDestruct;
             currCooldown = 0;
+
+            for(float i = 0; i<500; i += i *Time.deltaTime)
+            {
+                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            }
 
         }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    Army armyScript;
+
     public float moveS = 1000.0f;
 
     Rigidbody2D rigidB;
@@ -13,6 +15,7 @@ public class Player : MonoBehaviour
     {
         rigidB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        armyScript = GetComponent<Army>();
     }
 
     void FixedUpdate()
@@ -22,7 +25,7 @@ public class Player : MonoBehaviour
 
         currentVelocity = new Vector2(xAxis * moveS, currentVelocity.y);
 
-        rigidB.velocity = currentVelocity;
+        rigidB.velocity = currentVelocity * armyScript.speedModifier;
     }
 
     private void Update()

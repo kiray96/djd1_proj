@@ -32,20 +32,18 @@ public class AttackObject : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        var vel = rb.velocity;
-
         
-
         if(!isProjectile)
         {
 
+            dist ++;
 
             if (dist < lifeTime)
             {
  
-                rb.velocity = new Vector3(reachSpd, 0, 0);
+                rb.velocity = transform.right * reachSpd;
                 Debug.Log(dist);
-                dist ++;
+                
                
             }
             else if (dist >= lifeTime)
