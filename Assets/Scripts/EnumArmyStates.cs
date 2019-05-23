@@ -10,5 +10,6 @@ public enum EnumArmyStates
        Charge,
        AttackPush,
        Projectile,
-       SendKing 
+       SendKing,
+       Idle
 }
