@@ -56,6 +56,7 @@ public class Attack : MonoBehaviour
             b.isProjectile = rangedAttack;
             b.origin = transform.position;
             b.timeBeforeDestruct = this.timeBeforeDestruct;
+            b.creator = this.gameObject;
             yeet.GetComponent<Rigidbody2D>().rotation = 0;
 
             currCooldown = 0;
@@ -64,17 +65,24 @@ public class Attack : MonoBehaviour
 
         }
 
-        if (currAtkfrz < attackFreeze)
+        if (GameObject.FindGameObjectWithTag("Player"))
         {
 
-            GetComponent<Player>().moveS = 0;
-        }
-        else
-        {
+            if (currAtkfrz < attackFreeze)
+            {
 
-            GetComponent<Player>().moveS = m;
+                GetComponent<Player>().moveS = 0;
+            }
+            else
+            {
+
+                GetComponent<Player>().moveS = m;
+
+            }
+
 
         }
+
 
         //Debug.Log(currAtkfrz);
 

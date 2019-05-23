@@ -3148,6 +3148,16 @@ PrefabInstance:
       propertyPath: speedMod
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: massMod
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: atkMod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6651265904662926811, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
       propertyPath: atkMod
@@ -3167,6 +3177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speedMod
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811740627657687071, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: atkMod
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b051684348b00a4593d45776a4df53e, type: 3}

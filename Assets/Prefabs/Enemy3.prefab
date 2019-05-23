@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 5137363990064549124}
   - component: {fileID: 3151354241406864638}
   - component: {fileID: 8753364007828874458}
+  - component: {fileID: 1756094706}
+  - component: {fileID: 1756094705}
+  - component: {fileID: 1756094704}
   m_Layer: 9
   m_Name: Enemy3
   m_TagString: Enemy
@@ -152,4 +155,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  stoppingDistance: 50
+  stoppingDistance: 2
+--- !u!114 &1756094706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6551473867504777211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fc868f39897ab4bb9a44d725e1a4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  nTroops: 1
+  speedModifier: 1
+  defenseModifier: 0
+  attackModifier: 0
+  troopWeight: 0
+  massModifier: 0
+  defense: 0
+--- !u!114 &1756094705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6551473867504777211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9394bcca855b8b44ba2c1a800ba12ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControlled: 0
+  rangedAttack: 0
+  attackPrefab: {fileID: 0}
+  damage: 0
+  reach: 0
+  reachSpeed: 0
+  attackCooldown: 0
+  timeBeforeDestruct: 0
+  attackFreeze: 0
+--- !u!114 &1756094704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6551473867504777211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1be6d858d8e49947a3b0798689dfbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldierPrefab: {fileID: 1988945550069751523, guid: cd468ec96deda6c47aa055fda535c34b,
+    type: 3}
+  amountToShow: 3
+  trailLength: 0

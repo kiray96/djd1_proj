@@ -17,5 +17,24 @@ public class Army : MonoBehaviour
 
 
     public float massModifier;
+    public float defense;
+
+    private void Update()
+    {
+        GetComponent<Rigidbody2D>().mass *= massModifier;
+        if (nTroops <= 0) Destroy(gameObject);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (damage > defense * defenseModifier)
+        {
+            nTroops -= (int)damage * (int)defenseModifier;
+
+        }
+
+
+    }
+
 
 }

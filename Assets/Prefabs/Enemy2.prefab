@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 6480846545793431217}
   - component: {fileID: 8315565659706838346}
   - component: {fileID: 159788914132846961}
+  - component: {fileID: 1195159279}
+  - component: {fileID: 1195159278}
+  - component: {fileID: 1195159277}
   m_Layer: 9
   m_Name: Enemy2
   m_TagString: Enemy
@@ -152,4 +155,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  stoppingDistance: 50
+  stoppingDistance: 2
+--- !u!114 &1195159279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264108487751422845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fc868f39897ab4bb9a44d725e1a4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  nTroops: 3
+  speedModifier: 1
+  defenseModifier: 0
+  attackModifier: 0
+  troopWeight: 0
+  massModifier: 0
+  defense: 0
+--- !u!114 &1195159278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264108487751422845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9394bcca855b8b44ba2c1a800ba12ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControlled: 0
+  rangedAttack: 0
+  attackPrefab: {fileID: 0}
+  damage: 0
+  reach: 0
+  reachSpeed: 0
+  attackCooldown: 0
+  timeBeforeDestruct: 0
+  attackFreeze: 0
+--- !u!114 &1195159277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264108487751422845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1be6d858d8e49947a3b0798689dfbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldierPrefab: {fileID: 9062648223473890679, guid: 697439be836c8f74db9307a111f57613,
+    type: 3}
+  amountToShow: 3
+  trailLength: 0

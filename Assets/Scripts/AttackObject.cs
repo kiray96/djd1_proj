@@ -15,7 +15,7 @@ public class AttackObject : MonoBehaviour
     public bool isProjectile;
 
     public Vector3 origin;
-
+    public GameObject creator;
     
 
     float dist = 0.0f;
@@ -60,4 +60,16 @@ public class AttackObject : MonoBehaviour
 
         
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag != this.gameObject.tag)
+        {
+            collision.gameObject.GetComponent<Army>().TakeDamage(dmg);
+        }
+
+    }
+
+
+
 }
