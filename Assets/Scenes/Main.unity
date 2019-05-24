@@ -125,9 +125,9 @@ GameObject:
   - component: {fileID: 321511694}
   - component: {fileID: 321511693}
   - component: {fileID: 321511696}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -490,6 +490,16 @@ PrefabInstance:
     - target: {fileID: 1644057194173751013, guid: 20c94333e604ac9488d51a59112e5ae0,
         type: 3}
       propertyPath: m_Name
+      value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644057194173751013, guid: 20c94333e604ac9488d51a59112e5ae0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644057194173751013, guid: 20c94333e604ac9488d51a59112e5ae0,
+        type: 3}
+      propertyPath: m_TagString
       value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 5062682545936428328, guid: 20c94333e604ac9488d51a59112e5ae0,
@@ -3030,6 +3040,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7372764179102745956, guid: c9974a90fcef984479e0c2f220a598ea,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9974a90fcef984479e0c2f220a598ea, type: 3}
 --- !u!1001 &7941284725552104157
@@ -3143,6 +3158,14 @@ PrefabInstance:
       propertyPath: attackFreeze
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 633717913, guid: 6b051684348b00a4593d45776a4df53e, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 633717913, guid: 6b051684348b00a4593d45776a4df53e, type: 3}
+      propertyPath: reach
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
       propertyPath: speedMod
@@ -3182,6 +3205,11 @@ PrefabInstance:
         type: 3}
       propertyPath: atkMod
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941284725254500137, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: backwardsMod
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b051684348b00a4593d45776a4df53e, type: 3}

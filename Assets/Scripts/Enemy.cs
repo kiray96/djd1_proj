@@ -31,4 +31,13 @@ public class Enemy : MonoBehaviour
             anim.SetFloat("AbsVelocityX", Mathf.Abs(target.position.x));
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ded")
+        {
+            Destroy(gameObject);
+        }
+
+    }
 }

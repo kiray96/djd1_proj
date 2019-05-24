@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
         if (Time.time >nextSpawn)
         {
             whatToSpawn = Random.Range(1, 6);
-            Debug.Log(whatToSpawn);
+            //Debug.Log(whatToSpawn);
 
             switch (whatToSpawn)
             {

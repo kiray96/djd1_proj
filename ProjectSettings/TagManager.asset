@@ -7,6 +7,8 @@ TagManager:
   - BG
   - Enemy
   - Spawner
+  - Attack
+  - shoot
   layers:
   - Default
   - TransparentFX
@@ -19,12 +21,12 @@ TagManager:
   - BG
   - Player
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Persian
+  - Imortall
+  - Witch
+  - Ded
+  - Spawner
+  - Attack
   - 
   - 
   - 

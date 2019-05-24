@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 829493490457789511}
   m_Layer: 0
   m_Name: AttackObject
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &7076679964353884791
 CircleCollider2D:
@@ -70,7 +70,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.12
+  m_Radius: 7.39
 --- !u!114 &3442308265046936399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,11 +83,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce125d18e2ab7d4eae3868007e58ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
-  range: 0
+  dmg: 3
+  lifeTime: 0
   reachSpd: 0
+  timeBeforeDestruct: 0
   isProjectile: 0
   origin: {x: 0, y: 0, z: 0}
+  creator: {fileID: 6959834835003994944}
 --- !u!212 &829493490457789511
 SpriteRenderer:
   m_ObjectHideFlags: 0
