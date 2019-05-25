@@ -11,11 +11,15 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     float minDistanceToBrace;
     [SerializeField]
-    float chanceToDoNothing = 0.20f;
+    float minDistanceToAttack;
+
+    [SerializeField]
+    float chanceToDoNothing;
 
     float distanceToPlayer;
 
-    float agressiveMod;
+    [HideInInspector]
+    public float agressiveMod;
 
     float chanceToBrace;
     float chanceToCharge;
@@ -40,6 +44,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        atkScript = GetComponent<Attack>();
         playerArmy = GetComponentInParent<Player>().gameObject;
         
         // Tell them they shouldn't care about input
@@ -61,9 +66,14 @@ public class EnemyBehaviour : MonoBehaviour
         Mathf.Clamp(chanceToBrace, 0, 1);
         Mathf.Clamp(agressiveMod, 0, 1);
 
+        chanceToDoNothing *= agressiveMod;
         
         // Get distance to player
         distanceToPlayer = (playerArmy.transform.position - gameObject.transform.position).magnitude;
+
+        CalculateChanceToBrace();
+        CalculateChanceToCharge();
+
 
         Formation next = CalculateNextState();
         if (next != null)
@@ -90,7 +100,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     }
 
-
     void CalculateChanceToBrace()
     {
         // Enemy braces sooner if less agressive
@@ -103,6 +112,21 @@ public class EnemyBehaviour : MonoBehaviour
         }
         else
             chanceToBrace /= (1 / distanceToPlayer);
+
+    }
+
+    void ChanceToAttack()
+    {
+        float a = Random.Range(0, agressiveMod);
+        float b = Random.Range(0, 1);
+
+
+        if (distanceToPlayer < minDistanceToAttack)
+        {
+            if(a<b) 
+            atkScript.Strike(GetComponent<Enemy>(), agressiveMod);
+        }
+
 
     }
 
