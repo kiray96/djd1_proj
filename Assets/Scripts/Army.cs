@@ -5,14 +5,14 @@ using UnityEngine;
 public class Army : MonoBehaviour
 {
 
-    [SerializeField]
+    /*[SerializeField]
     GameObject persianPrefab;
 
     [SerializeField]
     GameObject imortallPrefab;
 
     [SerializeField]
-    GameObject wizardPrefab;
+    GameObject wizardPrefab; */
 
 
     public EnumArmyStates currentState;
