@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3888685525955384332
+--- !u!1001 &8992790073781813392
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -68,8 +68,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 8753364007828874458, guid: c3af8951216037e4d92cd5f9044abdb9, type: 3}
-    - {fileID: 1756094706, guid: c3af8951216037e4d92cd5f9044abdb9, type: 3}
     - {fileID: 1756094705, guid: c3af8951216037e4d92cd5f9044abdb9, type: 3}
     - {fileID: 1756094704, guid: c3af8951216037e4d92cd5f9044abdb9, type: 3}
+    - {fileID: 3571770014386415242, guid: c3af8951216037e4d92cd5f9044abdb9, type: 3}
+    - {fileID: 8753364007828874458, guid: c3af8951216037e4d92cd5f9044abdb9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c3af8951216037e4d92cd5f9044abdb9, type: 3}

@@ -12,7 +12,7 @@ public class Army : MonoBehaviour
     GameObject imortallPrefab;
 
     [SerializeField]
-    GameObject wizardPrefab;
+    GameObject witchPrefab;
 
     [SerializeField]
     GameObject Lose;
