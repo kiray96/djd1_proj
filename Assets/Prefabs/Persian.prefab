@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 343682308}
   - component: {fileID: 343682307}
   - component: {fileID: 343682306}
-  m_Layer: 9
-  m_Name: Enemy
+  m_Layer: 11
+  m_Name: Persian
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ Animator:
   m_GameObject: {fileID: 4168459224304794717}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8052973b60955c448af3ed1e4648ed43, type: 2}
+  m_Controller: {fileID: 9100000, guid: a44ae28c8e9fdc74f8d35485c5d0daa4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aacc1bb4e46d40a40a9321c65af36955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  stoppingDistance: 2
+  speed: 7
+  stoppingDistance: 7
 --- !u!114 &343682308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fc868f39897ab4bb9a44d725e1a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  persianPrefab: {fileID: 4168459224304794717}
+  imortallPrefab: {fileID: 4264108487751422845, guid: b51018b425485dc4889599d80de01cb0,
+    type: 3}
+  wizardPrefab: {fileID: 6551473867504777211, guid: c3af8951216037e4d92cd5f9044abdb9,
+    type: 3}
   currentState: 0
   nTroops: 2
   speedModifier: 1
@@ -209,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be6d858d8e49947a3b0798689dfbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierPrefab: {fileID: 7659672561361725865, guid: 3cc9a66209e22f14897261ba34410b50,
+  soldierPrefab: {fileID: 2360464096160727554, guid: a82037ccbdda5a6449aeed508076845b,
     type: 3}
   amountToShow: 3
   trailLength: 0

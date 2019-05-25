@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     Rigidbody2D rigidB;
     Animator anim;
 
+    [SerializeField]
+    private float backwardsMod;
+    private float currBackMod;
+
     void Start()
     {
         rigidB = GetComponent<Rigidbody2D>();
@@ -25,7 +29,7 @@ public class Player : MonoBehaviour
 
         currentVelocity = new Vector2(xAxis * moveS, currentVelocity.y);
 
-        rigidB.velocity = currentVelocity * armyScript.speedModifier;
+        rigidB.velocity = currentVelocity * armyScript.speedModifier * currBackMod;
     }
 
     private void Update()
@@ -34,12 +38,10 @@ public class Player : MonoBehaviour
 
         if (currentVelocity.x < 0.0f)
         {
-            moveS *= 0.4f;
+            currBackMod = backwardsMod;
         }
         else
-        {
-            
-        }
+            currBackMod = 1;
 
         anim.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x));
     }

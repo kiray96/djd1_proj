@@ -45,19 +45,19 @@ public class Attack : MonoBehaviour
         currCooldown += Time.deltaTime;
         currAtkfrz += Time.deltaTime;
 
-        if (Input.GetAxis("Fire1") > 0 && currCooldown >= attackCooldown && playerControlled)
+        if (Input.GetAxis("Fire1") > 0 && currCooldown >= attackCooldown && playerControlled )
         {
-            GameObject yeet = Instantiate(attackPrefab, transform.position, transform.rotation);
+            GameObject instantiatedObject = Instantiate(attackPrefab, transform.position, transform.rotation);
 
-            var b = yeet.GetComponentInChildren<AttackObject>();
-            b.dmg = damage * armyScript.attackModifier;
+            var b = instantiatedObject.GetComponentInChildren<AttackObject>();
+            b.dmg = damage;
             b.lifeTime = reach;
             b.reachSpd = reachSpeed;
             b.isProjectile = rangedAttack;
             b.origin = transform.position;
             b.timeBeforeDestruct = this.timeBeforeDestruct;
             b.creator = this.gameObject;
-            yeet.GetComponent<Rigidbody2D>().rotation = 0;
+           instantiatedObject.GetComponent<Rigidbody2D>().rotation = 0;
 
             currCooldown = 0;
             currAtkfrz = 0;
@@ -75,20 +75,9 @@ public class Attack : MonoBehaviour
             }
             else
             {
-
                 GetComponent<Player>().moveS = m;
-
             }
-
-
         }
-
-
-        //Debug.Log(currAtkfrz);
-
-
-
-
     }
 }
 

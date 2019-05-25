@@ -8,7 +8,7 @@ public class AttackObject : MonoBehaviour
 
 
     private Rigidbody2D rb;
-   
+
     public float dmg, lifeTime, reachSpd, timeBeforeDestruct;
 
     
@@ -24,8 +24,6 @@ public class AttackObject : MonoBehaviour
     {
        // AttackStats = GetComponentInParent<Attack>();
         rb = GetComponent<Rigidbody2D>();
-
-
 
     }
 
@@ -61,13 +59,34 @@ public class AttackObject : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != this.gameObject.tag)
+
+        Debug.Log("god strike me down");
+        if (collision.gameObject.tag == "Enemy")
         {
+
             collision.gameObject.GetComponent<Army>().TakeDamage(dmg);
+
+           Debug.Log(tag);
+            Destroy(this);
         }
 
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+
+        Debug.Log("god strike me down");
+        if (collision.gameObject.tag == "Enemy")
+        {
+
+            collision.gameObject.GetComponent<Army>().TakeDamage(dmg);
+
+            Debug.Log("hack");
+            Destroy(this.gameObject);
+        }
     }
 
 

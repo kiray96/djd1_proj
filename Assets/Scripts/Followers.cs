@@ -31,11 +31,20 @@ public class Followers : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; i++)
         {
+            if (gameObject.tag == "Enemy")
+            {
 
-            transform.GetChild(i).transform.localPosition = new Vector3(-32 * (i + 1), 0, 0);
+                transform.GetChild(i).transform.localPosition = new Vector3(32 * (i + 1), 0, 0);
 
+            }
+
+            if (gameObject.tag == "Player")
+            {
+
+                transform.GetChild(i).transform.localPosition = new Vector3(-32 * (i + 1), 0, 0);
+
+            }
         }
-
     }
 
     // Update is called once per frame
