@@ -18,9 +18,12 @@ public class Army : MonoBehaviour
     GameObject Lose;
 
 
+
     public EnumArmyStates currentState;
     public int nTroops;
     public float speedModifier = 1;
+    public float damagePenalty;
+
 
     public float defenseModifier;
     public float attackModifier;
@@ -69,6 +72,13 @@ public class Army : MonoBehaviour
     {
         if (damage > defense * defenseModifier)
         {
+            if (GetComponent<EnemyBehaviour>() != null)
+            {
+
+                GetComponent<EnemyBehaviour>().agressiveMod -= damagePenalty;
+
+            }
+
             nTroops -= (int)damage;
         }
 
