@@ -19,8 +19,12 @@ public class EnemyBehaviour : MonoBehaviour
 
     float chanceToBrace;
     float chanceToCharge;
+    float chanceToDoNothing = 0.20f;
+
 
     Formation[] possibleStates;
+
+    float[] chanceList;
 
 
     GameObject playerArmy;
@@ -28,73 +32,73 @@ public class EnemyBehaviour : MonoBehaviour
     {
         // Gets all components whpo inherit from the Formation class
         possibleStates = GetComponents<Formation>();
-
+        
     }
     // Start is called before the first frame update
     void Start()
     {
         playerArmy = GetComponentInParent<Player>().gameObject;
-
+        
         // Tell them they shouldn't care about input
         foreach (Formation p in possibleStates)
+        {
             p.SetControllable(false);
 
+        }
 
+        chanceList = new float[possibleStates.Length];
+           
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        Mathf.Clamp(chanceToCharge, 0, 1);
+        Mathf.Clamp(chanceToBrace, 0, 1);
+
+        
         // Get distance to player
         distanceToPlayer = (playerArmy.transform.position - gameObject.transform.position).magnitude;
 
 
 
-        //choiceWeight = Random.Range();
+ 
+
+    }
+
+    void CalculateChanceToCharge()
+    {
 
         // Enemy charges earlier if more agressive
         minDistanceToCharge *= agressiveMod;
 
-        // Enemy braces sooner if less agressive
-        minDistanceToBrace *= 1 + agressiveMod;
-
-        float deltaC = distanceToPlayer - minDistanceToCharge;
-        float deltaB = distanceToPlayer - minDistanceToBrace;
-
         if (distanceToPlayer > minDistanceToCharge)
         {
             // very big chance to Charge
-            chanceToCharge /= ;
-            
+            chanceToCharge /= (1 / distanceToPlayer);
+            Debug.Log("1/distance to player = " + 1 / distanceToPlayer);
+
         }
         else
-            chanceToCharge = 0;
+            chanceToCharge *= (1 / distanceToPlayer);
 
+    }
 
+    void CalculateChanceToBrace()
+    {
+        // Enemy braces sooner if less agressive
+        minDistanceToBrace *= 1 + agressiveMod;
 
         if (distanceToPlayer < minDistanceToBrace)
         {
             // very big chance to Brace
-            chanceToBrace /= 0.5f;
+            chanceToBrace *= (1 / distanceToPlayer);
         }
         else
-            chanceToBrace = 0;
-
-
-        if (chanceToBrace > chanceToCharge)
-        {
-
-            GetComponent<FBrace>().ActivateFormation();
-
-        }
-        else if (chanceToCharge < chanceToBrace)
-        {
-
-            GetComponent<FCharge>().ActivateFormation();
-
-        }
-
-
+            chanceToBrace /= (1 / distanceToPlayer);
 
     }
+
+
 }
