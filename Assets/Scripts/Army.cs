@@ -14,6 +14,9 @@ public class Army : MonoBehaviour
     [SerializeField]
     GameObject wizardPrefab;
 
+    [SerializeField]
+    GameObject Lose;
+
 
     public EnumArmyStates currentState;
     public int nTroops;
@@ -55,7 +58,10 @@ public class Army : MonoBehaviour
             anim.SetBool("Dead", true);
         }*/
 
-        if (nTroops <= 0) Destroy(gameObject);
+        if (nTroops <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -64,10 +70,14 @@ public class Army : MonoBehaviour
         if (damage > defense * defenseModifier)
         {
             nTroops -= (int)damage;
+        }
 
+        //                GAMEOVER
+
+        if (nTroops >= 0 && GameObject.FindGameObjectWithTag("Player"))
+        {
+            Lose.SetActive(true);
         }
 
     }
-
-
 }

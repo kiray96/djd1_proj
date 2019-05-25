@@ -9,6 +9,7 @@ TagManager:
   - Spawner
   - Attack
   - shoot
+  - GOAL
   layers:
   - Default
   - TransparentFX

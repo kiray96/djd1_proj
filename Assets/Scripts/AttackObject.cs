@@ -77,14 +77,12 @@ public class AttackObject : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-
-        Debug.Log("god strike me down");
+        
         if (collision.gameObject.tag == "Enemy")
         {
 
             collision.gameObject.GetComponent<Army>().TakeDamage(dmg);
-
-            Debug.Log("hack");
+            
             Destroy(this.gameObject);
         }
     }
