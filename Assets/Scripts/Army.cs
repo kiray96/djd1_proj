@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Base control for each "army" on in the game-
+/// \
+/// Hold information like number of troops (hp), modifiers 
+/// speed, mass and attack power.
+/// </summary>
 public class Army : MonoBehaviour
 {
 
@@ -23,10 +29,6 @@ public class Army : MonoBehaviour
     public float defenseModifier;
     [HideInInspector]
     public float attackModifier;
-
-    // How much mass is each soldier worth
-    [SerializeField] protected float troopWeight;
-
     
     Animator anim;
 
@@ -41,24 +43,6 @@ public class Army : MonoBehaviour
         GetComponent<Rigidbody2D>().mass *= massModifier;
         anim = GetComponent<Animator>();
 
-        /*if (persianPrefab && nTroops <= 0)
-        {
-            Destroy(gameObject);
-            anim.SetBool("Dead", true);
-        }
-
-        if (imortallPrefab && nTroops <= 0)
-        {
-            Destroy(gameObject);
-            anim.SetBool("Dead", true);
-        }
-
-        if (wizardPrefab && nTroops <= 0)
-        {
-            Destroy(gameObject);
-            anim.SetBool("Dead", true);
-        }*/
-
         if (nTroops <= 0)
         {
             Destroy(gameObject);
@@ -72,12 +56,13 @@ public class Army : MonoBehaviour
         {
             if (GetComponent<EnemyBehaviour>() != null)
             {
-
+                // Enemies will get less agressive after being hurt, 
                 GetComponent<EnemyBehaviour>().agressiveMod -= damagePenalty;
 
             }
-
+        
             nTroops -= (int)damage;
+            GetComponent<Followers>().UpdateFollowers(nTroops);
         }
 
         //                GAMEOVER

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Base class for armies with Enemy logic.
+/// </summary>
 public class Enemy : MonoBehaviour
 {
     public float speed;

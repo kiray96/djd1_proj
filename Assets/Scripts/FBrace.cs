@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Standart defensive formation, helps army hold their ground and moves slower.
+/// </summary>
 public class FBrace : Formation
 {
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
-        currFormation = EnumArmyStates.Brace;
+        thisFormation = EnumArmyStates.Brace;
     }
 
     // Update is called once per frame

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class specific for the army controlled by the player
+/// </summary>
 public class Player : MonoBehaviour
 {
     Army armyScript;
@@ -71,6 +74,5 @@ public class Player : MonoBehaviour
         {
             Win.SetActive(true);
         }
-        Debug.Log(tag);
     }
 }

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class in charge of allowing it's gameobject to attack.
+/// \
+/// That is to say, spawn AttackObjects.
+/// </summary>
 public class Attack : MonoBehaviour
 {
 
@@ -63,7 +68,12 @@ public class Attack : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Spawn an attack object with the current stats, given by the current
+    /// formation.
+    /// </summary>
+    /// <param name="agent">If what is spawning it is a player or enemy, gotten trough what script is has.</param>
+    /// <param name="agressiveModifier">A modifier to add to the damage</param>
     public void Strike(MonoBehaviour agent, float agressiveModifier)
     {
         
@@ -89,7 +99,11 @@ public class Attack : MonoBehaviour
             m = GetComponent<Enemy>().speed;
     }
 
-
+/// <summary>
+    /// Spawn an attack object with the current stats, given by the current
+    /// formation.
+    /// </summary>
+    /// <param name="agent">If what is spawning it is a player or enemy, gotten trough what script is has.</param>
     public void Strike(MonoBehaviour agent)
     {
 

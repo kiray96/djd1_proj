@@ -5,6 +5,9 @@ using UnityEngine;
 public class Followers : MonoBehaviour
 {
 
+    /// <summary>
+    /// Shows the troops behind the leader, and can serve as health display.
+    /// </summary>
     Army aScript;
     [SerializeField]
     GameObject soldierPrefab;
@@ -22,6 +25,29 @@ public class Followers : MonoBehaviour
     {
         aScript = GetComponent<Army>();
 
+        UpdateFollowers(aScript.nTroops);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        amountToShow = Mathf.Clamp(amountToShow, 0, aScript.nTroops);
+
+    }
+
+    public void UpdateFollowers(float nFollowers)
+    {
+
+        if(transform.childCount > 0) 
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Destroy(transform.GetChild(i));
+            }
+
+        }
 
         for (int i = 0; i < amountToShow; i++)
         {
@@ -45,13 +71,6 @@ public class Followers : MonoBehaviour
 
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        amountToShow = Mathf.Clamp(amountToShow, 0, aScript.nTroops);
 
     }
 }

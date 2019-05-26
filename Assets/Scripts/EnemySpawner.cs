@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that handles sthe spawning of the 3 enemy types
+/// </summary>
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy1, enemy2, enemy3;

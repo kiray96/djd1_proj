@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Formation : MonoBehaviour
+/// <summary>
+/// Mother class to all the kind of formations an army can take.
+/// \
+/// Storing all stats.
+/// </summary>
+public abstract class Formation : MonoBehaviour
 {
     protected Army armyScript;
 
@@ -18,7 +23,7 @@ public class Formation : MonoBehaviour
     [SerializeField]
     protected float massMod;
 
-    protected EnumArmyStates currFormation;
+    protected EnumArmyStates thisFormation;
 
     [SerializeField]
     protected bool playerControl = true;
@@ -37,9 +42,13 @@ public class Formation : MonoBehaviour
         massMod = Mathf.Clamp(massMod, 0, 1);
     }
 
+    /// <summary>
+    /// Access the army script of the GameObject and apply to it the values
+    /// established here.
+    /// </summary>
     public void ActivateFormation()
     {
-        armyScript.currentState = currFormation;
+        armyScript.currentState = thisFormation;
         armyScript.defenseModifier = defMod;
         armyScript.speedModifier = speedMod;
         armyScript.attackModifier = atkMod;
