@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///  Most defensive position possible, guards agains't projectiles.!--
+/// But can't move while on it.
+/// </summary>
 public class FCover : Formation
 {
 
@@ -10,7 +14,7 @@ public class FCover : Formation
     new void Start()
     {
         base.Start();
-        currFormation = EnumArmyStates.Cover;        
+        thisFormation = EnumArmyStates.Cover;        
     }
 
     // Update is called once per frame

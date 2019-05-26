@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class specific for the army controlled by the player
+/// </summary>
 public class Player : MonoBehaviour
 {
     Army armyScript;

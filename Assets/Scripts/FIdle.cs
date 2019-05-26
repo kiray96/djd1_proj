@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Doing nothing, just standing there... menacingly.
+/// </summary>
 public class FIdle : Formation
 {
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
-        currFormation = EnumArmyStates.Idle;
+        thisFormation = EnumArmyStates.Idle;
     }
 
     // Update is called once per frame

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manager to make enemies decide what formation they will use.
+/// </summary>
 public class EnemyBehaviour : MonoBehaviour
 {
     
@@ -37,7 +40,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        // Gets all components whpo inherit from the Formation class
+        // Gets all components who inherit from the Formation class
         possibleStates = GetComponents<Formation>();
         
     }
@@ -73,6 +76,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         CalculateChanceToBrace();
         CalculateChanceToCharge();
+        ChanceToAttack();
 
 
         Formation next = CalculateNextState();
@@ -88,9 +92,11 @@ public class EnemyBehaviour : MonoBehaviour
         // Enemy charges earlier if more agressive
         minDistanceToCharge *= agressiveMod;
 
+         // Gives a bonus to the chance to charge based on how far 
+         // away from the player the army is
         if (distanceToPlayer > minDistanceToCharge)
         {
-            // very big chance to Charge
+           
             chanceToCharge /= (1 / distanceToPlayer);
             Debug.Log("1/distance to player = " + 1 / distanceToPlayer);
 
@@ -105,6 +111,8 @@ public class EnemyBehaviour : MonoBehaviour
         // Enemy braces sooner if less agressive
         minDistanceToBrace *= 1 + agressiveMod;
 
+         // Gives a bonus to the chance to Brace based on how close 
+         // from the player the army is
         if (distanceToPlayer < minDistanceToBrace)
         {
             // very big chance to Brace
@@ -120,7 +128,7 @@ public class EnemyBehaviour : MonoBehaviour
         float a = Random.Range(0, agressiveMod);
         float b = Random.Range(0, 1);
 
-
+        // When in range there's a chance to attack
         if (distanceToPlayer < minDistanceToAttack)
         {
             if(a<b) 
@@ -133,7 +141,7 @@ public class EnemyBehaviour : MonoBehaviour
     Formation CalculateNextState()
     {
         float sum = 0.0f;
-        chanceList[0] = chanceToDoNothing;
+  
 
         // REMINDER:
         // chanceList has 1 more value than possibleStates, this is the chance 
@@ -143,19 +151,31 @@ public class EnemyBehaviour : MonoBehaviour
         {
             if (possibleStates[i] as FCharge != null) chanceList[i + 1] = chanceToCharge;
             if (possibleStates[i] as FBrace != null) chanceList[i + 1] = chanceToBrace;
-            // more chances for more formation spossible
+            // more chances for more formations possible
         }
 
 
+        // Algorithm for weighted Randomization:
+        // Get the sum of all chances, then 
+        // get a random number between 0 and it.
+        // Subtract the random from each possible chance and if
+        // it's smaller then that is the choosen chance.
         foreach (float f in chanceList)
         {
             sum += f;
         }
 
+        // Specific case to get the chance that the army doesnt change formation
+        // always a specified percentage of the sum,
+        // then put that in the array and add it to the sum.
+        chanceList[0] = sum * chanceToDoNothing;
+        sum += chanceToDoNothing;
+
+        
+        // Weighted chance
         float r = Random.Range(0, sum);
 
-
-        if (sum < chanceList[0])
+        if (r < chanceList[0])
         {
             return null;
         }
@@ -164,7 +184,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         for (int i = 1; i < chanceList.Length - 1; i++)
         {
-            if (sum < chanceList[i])
+            if (r < chanceList[i])
             {
                 return possibleStates[i - 1];
 

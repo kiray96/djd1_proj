@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Very fast movement forward, leaves army vulnerable to damage
+/// </summary>
 public class FCharge : Formation
 {
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
+        thisFormation = EnumArmyStates.Charge; 
       
     }
 

@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Base control for each "army" on in the game-
+/// \
+/// Hold information like number of troops (hp), modifiers 
+/// speed, mass and attack power.
+/// </summary>
 public class Army : MonoBehaviour
 {
 
@@ -25,12 +31,6 @@ public class Army : MonoBehaviour
     [HideInInspector]
     public float attackModifier;
     
-
-    // How much mass is each soldier worth
-    [SerializeField] protected float troopWeight;
-
-    Animator anim;
-
     [HideInInspector]
     public float massModifier;
 
@@ -41,6 +41,7 @@ public class Army : MonoBehaviour
     {
 
         GetComponent<Rigidbody2D>().mass *= massModifier;
+
 
         if (nTroops <= 0)
         {
@@ -55,13 +56,16 @@ public class Army : MonoBehaviour
         {
             if (GetComponent<EnemyBehaviour>() != null)
             {
-
+                // Enemies will get less agressive after being hurt, 
                 GetComponent<EnemyBehaviour>().agressiveMod -= damagePenalty;
 
             }
-
+        
             nTroops -= (int)damage;
             player.TroopsTxt -= (int)damage;
+            
+            // Updates how many guys are following the main object
+            GetComponent<Followers>().UpdateFollowers(nTroops);
         }
 
         //                GAMEOVER

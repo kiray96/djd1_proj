@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Standar movement forward.
+/// </summary>
 public class FMarch : Formation
 {
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
-        currFormation = EnumArmyStates.March;
+        thisFormation = EnumArmyStates.March;
     }
 
     // Update is called once per frame
