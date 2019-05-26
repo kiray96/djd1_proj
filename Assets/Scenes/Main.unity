@@ -714,7 +714,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2088,7 +2088,6 @@ GameObject:
   - component: {fileID: 1137969400}
   - component: {fileID: 1137969399}
   - component: {fileID: 1137969403}
-  - component: {fileID: 1137969404}
   - component: {fileID: 1137969405}
   m_Layer: 5
   m_Name: Canvas
@@ -2191,18 +2190,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e680cbe2d2dc7a444ab3ac4dbd4b9924, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1137969404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137969398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b48f93f871d6b43a486a14da0faea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1137969405
@@ -2578,6 +2565,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 1644057194173751013, guid: 20c94333e604ac9488d51a59112e5ae0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5062682545936428328, guid: 20c94333e604ac9488d51a59112e5ae0,
         type: 3}
       propertyPath: m_Size.x
@@ -2611,6 +2603,11 @@ PrefabInstance:
     - target: {fileID: 5062682545936428328, guid: 20c94333e604ac9488d51a59112e5ae0,
         type: 3}
       propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062682545936428328, guid: 20c94333e604ac9488d51a59112e5ae0,
+        type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6757759881377796045, guid: 20c94333e604ac9488d51a59112e5ae0,
@@ -4081,7 +4078,6 @@ GameObject:
   - component: {fileID: 2081940292}
   - component: {fileID: 2081940291}
   - component: {fileID: 2081940290}
-  - component: {fileID: 2081940293}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4137,18 +4133,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2081940293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081940289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b48f93f871d6b43a486a14da0faea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2130309715
 GameObject:
   m_ObjectHideFlags: 0
@@ -6576,6 +6560,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 633717913, guid: 6b051684348b00a4593d45776a4df53e, type: 3}
+      propertyPath: attackFreeze
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 633717913, guid: 6b051684348b00a4593d45776a4df53e, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 633717913, guid: 6b051684348b00a4593d45776a4df53e, type: 3}
+      propertyPath: reach
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7941284725254500133, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6636,6 +6632,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.04
       objectReference: {fileID: 0}
+    - target: {fileID: 7941284725254500139, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7941284725254500138, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
       propertyPath: m_DrawMode
@@ -6666,34 +6667,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 7941284725254500139, guid: 6b051684348b00a4593d45776a4df53e,
+    - target: {fileID: 7941284725254500137, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
-      propertyPath: m_Constraints
-      value: 4
+      propertyPath: backwardsMod
+      value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 633717913, guid: 6b051684348b00a4593d45776a4df53e, type: 3}
-      propertyPath: attackFreeze
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 633717913, guid: 6b051684348b00a4593d45776a4df53e, type: 3}
-      propertyPath: damage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 633717913, guid: 6b051684348b00a4593d45776a4df53e, type: 3}
-      propertyPath: reach
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
+    - target: {fileID: 7941284725254500137, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
-      propertyPath: speedMod
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
+      propertyPath: Win
+      value: 
+      objectReference: {fileID: 768696326}
+    - target: {fileID: 7941284725254500137, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
-      propertyPath: massMod
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
+      propertyPath: Pause
+      value: 
+      objectReference: {fileID: 661638107}
+    - target: {fileID: 7811740627657687071, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
       propertyPath: atkMod
       value: 1
@@ -6718,26 +6707,21 @@ PrefabInstance:
       propertyPath: speedMod
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 7811740627657687071, guid: 6b051684348b00a4593d45776a4df53e,
+    - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: speedMod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: massMod
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 891641793344389525, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
       propertyPath: atkMod
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7941284725254500137, guid: 6b051684348b00a4593d45776a4df53e,
-        type: 3}
-      propertyPath: backwardsMod
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941284725254500137, guid: 6b051684348b00a4593d45776a4df53e,
-        type: 3}
-      propertyPath: Win
-      value: 
-      objectReference: {fileID: 768696326}
-    - target: {fileID: 7941284725254500137, guid: 6b051684348b00a4593d45776a4df53e,
-        type: 3}
-      propertyPath: Pause
-      value: 
-      objectReference: {fileID: 661638107}
     - target: {fileID: 2484628193560773815, guid: 6b051684348b00a4593d45776a4df53e,
         type: 3}
       propertyPath: Lose
