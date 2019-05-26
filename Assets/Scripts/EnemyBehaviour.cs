@@ -22,7 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
     float distanceToPlayer;
 
     [HideInInspector]
-    public float agressiveMod;
+    public float agressiveMod = 0.5f;
 
     float chanceToBrace;
     float chanceToCharge;
@@ -47,8 +47,10 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        Debug.Log("Fuck");
         atkScript = GetComponent<Attack>();
-        playerArmy = GetComponentInParent<Player>().gameObject;
+        playerArmy = GameObject.FindGameObjectWithTag("Player");
         
         // Tell them they shouldn't care about input
         foreach (Formation p in possibleStates)
@@ -64,7 +66,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         Mathf.Clamp(chanceToCharge, 0, 1);
         Mathf.Clamp(chanceToBrace, 0, 1);
         Mathf.Clamp(agressiveMod, 0, 1);
@@ -74,16 +76,18 @@ public class EnemyBehaviour : MonoBehaviour
         // Get distance to player
         distanceToPlayer = (playerArmy.transform.position - gameObject.transform.position).magnitude;
 
+        Debug.Log("dist = " + distanceToPlayer);
+
         CalculateChanceToBrace();
         CalculateChanceToCharge();
         ChanceToAttack();
-
+        
 
         Formation next = CalculateNextState();
         if (next != null)
             next.ActivateFormation();
 
-
+        
     }
 
     void CalculateChanceToCharge()
@@ -134,7 +138,6 @@ public class EnemyBehaviour : MonoBehaviour
             if(a <= b) 
             atkScript.Strike(GetComponent<Enemy>(), agressiveMod);
         }
-
 
     }
 
