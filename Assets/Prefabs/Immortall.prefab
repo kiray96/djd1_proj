@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistanceToCharge: 0
   minDistanceToBrace: 0
-  minDistanceToAttack: 0
+  minDistanceToAttack: 6
   chanceToDoNothing: 0.2
   agressiveMod: 0
 --- !u!114 &3774765866323310002
