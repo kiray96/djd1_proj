@@ -254,10 +254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b625c10d63225458e87f49b3b21fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMod: 0
+  speedMod: 0.3
   atkMod: 0
-  defMod: 0
-  massMod: 0
+  defMod: 3
+  massMod: 2
   playerControl: 1
 --- !u!114 &3605198169513885749
 MonoBehaviour:

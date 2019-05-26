@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1756094705}
   - component: {fileID: 1756094704}
   - component: {fileID: 5044852179635681243}
+  - component: {fileID: 8295494927271115996}
   - component: {fileID: 6053213638028492527}
   m_Layer: 13
   m_Name: Witch
@@ -173,7 +174,7 @@ MonoBehaviour:
   rangedAttack: 1
   attackPrefab: {fileID: 6731192041798751121, guid: ecc07dba3e53b7247a5f93ad1e43af4c,
     type: 3}
-  damage: 40
+  damage: 50
   reach: 16
   reachSpeed: 2
   attackCooldown: 20
@@ -214,9 +215,25 @@ MonoBehaviour:
   damagePenalty: 0
   defenseModifier: 0
   attackModifier: 0
-  troopWeight: 0
   massModifier: 0
   defense: 0
+--- !u!114 &8295494927271115996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6551473867504777211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ec5ead74edd5749b30b6aa182ecbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistanceToCharge: 0
+  minDistanceToBrace: 0
+  minDistanceToAttack: 13
+  chanceToDoNothing: 0
+  agressiveMod: 0
 --- !u!82 &6053213638028492527
 AudioSource:
   m_ObjectHideFlags: 0
