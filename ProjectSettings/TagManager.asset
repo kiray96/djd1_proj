@@ -11,6 +11,7 @@ TagManager:
   - shoot
   - GOAL
   - Magic
+  - Wizard
   layers:
   - Default
   - TransparentFX

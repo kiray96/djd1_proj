@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5044852179635681243}
   m_Layer: 13
   m_Name: Witch
-  m_TagString: Enemy
+  m_TagString: Wizard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ Animator:
   m_GameObject: {fileID: 6551473867504777211}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8052973b60955c448af3ed1e4648ed43, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -207,8 +207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lose: {fileID: 0}
-  healthText: {fileID: 0}
-  TroopsTxt: 0
   currentState: 1
   nTroops: 1
   speedModifier: 1

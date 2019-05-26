@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,12 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     GameObject Spawner;
+
+
+    public Text healthText;
+
+    [SerializeField]
+    public int TroopsTxt;
 
     void Start()
     {
@@ -50,6 +57,9 @@ public class Player : MonoBehaviour
         else
             currBackMod = 1;
 
+
+
+        healthText.text = "" + TroopsTxt;
         anim.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x));
     }
 
@@ -63,6 +73,5 @@ public class Player : MonoBehaviour
             Win.SetActive(true);
             Destroy(Spawner);
         }
-        Debug.Log(tag);
     }
 }

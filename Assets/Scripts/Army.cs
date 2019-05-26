@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Army : MonoBehaviour
 {
@@ -9,10 +8,7 @@ public class Army : MonoBehaviour
     [SerializeField]
     GameObject Lose;
 
-    public Text healthText;
-
-    [SerializeField]
-    public int TroopsTxt;
+    Player player;
 
 
     public EnumArmyStates currentState;
@@ -50,8 +46,6 @@ public class Army : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        healthText.text = "" + TroopsTxt;
     }
 
 
@@ -67,7 +61,7 @@ public class Army : MonoBehaviour
             }
 
             nTroops -= (int)damage;
-            TroopsTxt -= (int)damage;
+            player.TroopsTxt -= (int)damage;
         }
 
         //                GAMEOVER
