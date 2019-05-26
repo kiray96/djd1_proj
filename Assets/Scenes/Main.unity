@@ -685,7 +685,7 @@ MonoBehaviour:
   enemy1: {fileID: 4168459224304794717, guid: a171d36148a18c44592f76250b12f5ac, type: 3}
   enemy2: {fileID: 4264108487751422845, guid: b51018b425485dc4889599d80de01cb0, type: 3}
   enemy3: {fileID: 6551473867504777211, guid: c3af8951216037e4d92cd5f9044abdb9, type: 3}
-  spawnRate: 2
+  spawnRate: 3
 --- !u!212 &321511694
 SpriteRenderer:
   m_ObjectHideFlags: 0

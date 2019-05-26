@@ -34,23 +34,18 @@ public class Player : MonoBehaviour
 
         //                  PAUSE
 
-        if (Input.GetKey(KeyCode.P))  //Se Pause estiver disabled -> able
+        if (Input.GetKey(KeyCode.Escape))  //Se Pause estiver disabled -> able
         {
             Pause.SetActive(true);
-            Debug.Log("Pause!");
+
+            
         }
 
-
-            Vector2 currentVelocity = rigidB.velocity;
+        Vector2 currentVelocity = rigidB.velocity;
 
         currentVelocity = new Vector2(xAxis * moveS, currentVelocity.y);
 
         rigidB.velocity = currentVelocity * armyScript.speedModifier * currBackMod;
-
-
-       
-        
-
     }
 
     private void Update()

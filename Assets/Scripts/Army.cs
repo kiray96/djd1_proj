@@ -5,15 +5,6 @@ using UnityEngine;
 public class Army : MonoBehaviour
 {
 
-    /*[SerializeField]
-    GameObject persianPrefab;
-
-    [SerializeField]
-    GameObject imortallPrefab;
-
-    [SerializeField]
-    GameObject wizardPrefab; */
-
     [SerializeField]
     GameObject Lose;
 
