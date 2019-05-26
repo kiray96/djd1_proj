@@ -171,7 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControlled: 0
   rangedAttack: 0
-  attackPrefab: {fileID: 0}
+  attackPrefab: {fileID: 6731192041798751121, guid: ecc07dba3e53b7247a5f93ad1e43af4c,
+    type: 3}
   damage: 40
   reach: 0
   reachSpeed: 0
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be6d858d8e49947a3b0798689dfbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPBar: {fileID: 0}
   soldierPrefab: {fileID: 0}
   amountToShow: 0
   trailLength: 0
@@ -221,6 +223,7 @@ MonoBehaviour:
   imortallPrefab: {fileID: 0}
   witchPrefab: {fileID: 6551473867504777211}
   Lose: {fileID: 0}
+  healthText: {fileID: 0}
   currentState: 0
   nTroops: 0
   speedModifier: 1

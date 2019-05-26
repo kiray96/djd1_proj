@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Army : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Army : MonoBehaviour
     [SerializeField]
     GameObject Lose;
 
+    public Text healthText;
+
+    [SerializeField]
+    public int TroopsTxt;
 
     public EnumArmyStates currentState;
     public int nTroops;
@@ -24,11 +29,11 @@ public class Army : MonoBehaviour
 
     public float defenseModifier;
     public float attackModifier;
+    
 
     // How much mass is each soldier worth
     [SerializeField] protected float troopWeight;
 
-    
     Animator anim;
 
 
@@ -37,31 +42,15 @@ public class Army : MonoBehaviour
 
     private void Update()
     {
+
         GetComponent<Rigidbody2D>().mass *= massModifier;
-        anim = GetComponent<Animator>();
-
-        /*if (persianPrefab && nTroops <= 0)
-        {
-            Destroy(gameObject);
-            anim.SetBool("Dead", true);
-        }
-
-        if (imortallPrefab && nTroops <= 0)
-        {
-            Destroy(gameObject);
-            anim.SetBool("Dead", true);
-        }
-
-        if (wizardPrefab && nTroops <= 0)
-        {
-            Destroy(gameObject);
-            anim.SetBool("Dead", true);
-        }*/
 
         if (nTroops <= 0)
         {
             Destroy(gameObject);
         }
+
+        healthText.text = "" + TroopsTxt;
     }
 
 
@@ -70,6 +59,7 @@ public class Army : MonoBehaviour
         if (damage > defense * defenseModifier)
         {
             nTroops -= (int)damage;
+            TroopsTxt -= (int)damage;
         }
 
         //                GAMEOVER

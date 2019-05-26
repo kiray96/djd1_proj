@@ -51,12 +51,7 @@ public class AttackObject : MonoBehaviour
                 Destroy(gameObject);
                 dist = 0;
             }
-
-
         }
-
-
-        
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)

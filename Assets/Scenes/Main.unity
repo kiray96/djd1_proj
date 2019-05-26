@@ -583,23 +583,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 661638107}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 1137969405}
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1395,6 +1384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 661638108}
+  - component: {fileID: 661638109}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -1426,6 +1416,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &661638109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661638107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13ebcb55294f84489a2d62e10ffc096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!1 &749324779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,6 +2089,7 @@ GameObject:
   - component: {fileID: 1137969399}
   - component: {fileID: 1137969403}
   - component: {fileID: 1137969404}
+  - component: {fileID: 1137969405}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2201,6 +2205,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b48f93f871d6b43a486a14da0faea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1137969405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137969398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13ebcb55294f84489a2d62e10ffc096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 661638107}
 --- !u!1 &1162508835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be6d858d8e49947a3b0798689dfbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPBar: {fileID: 0}
   soldierPrefab: {fileID: 7583972339591323903, guid: 58a10fdeedd0a6240bafa27c95d2b076,
     type: 3}
   amountToShow: 300
@@ -2329,7 +2347,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 300
+  m_Text: xxx
 --- !u!222 &1220027030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6729,6 +6747,26 @@ PrefabInstance:
         type: 3}
       propertyPath: imortallPrefab
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484628193560773815, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1220027029}
+    - target: {fileID: 2484628193560773815, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: nTroops
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484628193560773815, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: TroopsTxt
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484628193560773815, guid: 6b051684348b00a4593d45776a4df53e,
+        type: 3}
+      propertyPath: currentState
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b051684348b00a4593d45776a4df53e, type: 3}

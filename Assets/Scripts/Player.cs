@@ -18,9 +18,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject Win;
 
-    [SerializeField]
-    GameObject Pause;
-
     void Start()
     {
         rigidB = GetComponent<Rigidbody2D>();
@@ -31,15 +28,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         float xAxis = Input.GetAxis("Horizontal");
-
-        //                  PAUSE
-
-        if (Input.GetKey(KeyCode.Escape))  //Se Pause estiver disabled -> able
-        {
-            Pause.SetActive(true);
-
-            
-        }
 
         Vector2 currentVelocity = rigidB.velocity;
 

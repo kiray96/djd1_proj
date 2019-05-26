@@ -171,7 +171,9 @@ MonoBehaviour:
   persianPrefab: {fileID: 4168459224304794717, guid: a171d36148a18c44592f76250b12f5ac,
     type: 3}
   imortallPrefab: {fileID: 4264108487751422845}
+  witchPrefab: {fileID: 0}
   Lose: {fileID: 0}
+  healthText: {fileID: 0}
   currentState: 0
   nTroops: 5
   speedModifier: 1
@@ -196,9 +198,9 @@ MonoBehaviour:
   rangedAttack: 0
   attackPrefab: {fileID: 0}
   damage: 30
-  reach: 0
-  reachSpeed: 0
-  attackCooldown: 0
+  reach: 3
+  reachSpeed: 2
+  attackCooldown: 2
   timeBeforeDestruct: 0
   attackFreeze: 0
 --- !u!114 &1195159277
@@ -213,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be6d858d8e49947a3b0798689dfbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPBar: {fileID: 0}
   soldierPrefab: {fileID: 5479722933805775615, guid: a6f768fd7f043c340b9253a9c958bd80,
     type: 3}
   amountToShow: 3

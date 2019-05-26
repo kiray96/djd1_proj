@@ -10,6 +10,7 @@ TagManager:
   - Attack
   - shoot
   - GOAL
+  - Magic
   layers:
   - Default
   - TransparentFX
