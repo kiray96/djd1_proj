@@ -8,7 +8,7 @@ public class FCharge : Formation
     new void Start()
     {
         base.Start();
-        currFormation = EnumArmyStates.Charge;
+      
     }
 
     // Update is called once per frame
@@ -26,4 +26,6 @@ public class FCharge : Formation
         }
         
     }
+
+    
 }
