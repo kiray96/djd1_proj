@@ -14,6 +14,7 @@ public class Army : MonoBehaviour
     [SerializeField]
     GameObject Lose;
 
+    Player player;
 
 
     public EnumArmyStates currentState;
@@ -30,8 +31,6 @@ public class Army : MonoBehaviour
     [HideInInspector]
     public float attackModifier;
     
-    Animator anim;
-
     [HideInInspector]
     public float massModifier;
 
@@ -40,8 +39,9 @@ public class Army : MonoBehaviour
 
     private void Update()
     {
+
         GetComponent<Rigidbody2D>().mass *= massModifier;
-        anim = GetComponent<Animator>();
+
 
         if (nTroops <= 0)
         {
@@ -62,6 +62,9 @@ public class Army : MonoBehaviour
             }
         
             nTroops -= (int)damage;
+            player.TroopsTxt -= (int)damage;
+            
+            // Updates how many guys are following the main object
             GetComponent<Followers>().UpdateFollowers(nTroops);
         }
 

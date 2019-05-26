@@ -16,11 +16,11 @@ GameObject:
   - component: {fileID: 8753364007828874458}
   - component: {fileID: 1756094705}
   - component: {fileID: 1756094704}
-  - component: {fileID: 3571770014386415242}
   - component: {fileID: 5044852179635681243}
+  - component: {fileID: 6053213638028492527}
   m_Layer: 13
   m_Name: Witch
-  m_TagString: Enemy
+  m_TagString: Wizard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,9 +76,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300026, guid: 15bc7e68be7e60e44a2b471b9f988c86, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.96201396, a: 1}
-  m_FlipX: 1
+  m_Sprite: {fileID: 21300000, guid: 0d944798ab3ecf5439ff696938f6978c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 64, y: 64}
@@ -121,8 +121,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.91, y: -0.93}
-  m_Size: {x: 25.95, y: 63.1}
+  m_Offset: {x: -2.6766217, y: 0}
+  m_Size: {x: 28.416756, y: 53.61}
   m_Direction: 0
 --- !u!95 &3151354241406864638
 Animator:
@@ -134,7 +134,7 @@ Animator:
   m_GameObject: {fileID: 6551473867504777211}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8052973b60955c448af3ed1e4648ed43, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
-  stoppingDistance: 10
+  stoppingDistance: 7
 --- !u!114 &1756094705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,14 +170,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControlled: 0
-  rangedAttack: 0
-  attackPrefab: {fileID: 0}
+  rangedAttack: 1
+  attackPrefab: {fileID: 6731192041798751121, guid: ecc07dba3e53b7247a5f93ad1e43af4c,
+    type: 3}
   damage: 40
-  reach: 0
-  reachSpeed: 0
-  attackCooldown: 0
-  timeBeforeDestruct: 0
-  attackFreeze: 0
+  reach: 16
+  reachSpeed: 2
+  attackCooldown: 20
+  timeBeforeDestruct: 20
+  attackFreeze: 3
 --- !u!114 &1756094704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,21 +191,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be6d858d8e49947a3b0798689dfbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierPrefab: {fileID: 0}
+  soldierPrefab: {fileID: 2749249834036557675, guid: 5f1338b1c7e8fdf46b70b141843ae401,
+    type: 3}
   amountToShow: 0
   trailLength: 0
---- !u!114 &3571770014386415242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6551473867504777211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca71d8a14b916a84dbabb2180b6e5f0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5044852179635681243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,15 +207,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fc868f39897ab4bb9a44d725e1a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  persianPrefab: {fileID: 0}
-  imortallPrefab: {fileID: 0}
-  witchPrefab: {fileID: 6551473867504777211}
   Lose: {fileID: 0}
-  currentState: 0
-  nTroops: 0
+  currentState: 1
+  nTroops: 1
   speedModifier: 1
+  damagePenalty: 0
   defenseModifier: 0
   attackModifier: 0
   troopWeight: 0
   massModifier: 0
   defense: 0
+--- !u!82 &6053213638028492527
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6551473867504777211}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3e10815c031b14d499c1ce3c1e42521d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.25
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

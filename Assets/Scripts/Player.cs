@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Class specific for the army controlled by the player
@@ -22,7 +23,13 @@ public class Player : MonoBehaviour
     GameObject Win;
 
     [SerializeField]
-    GameObject Pause;
+    GameObject Spawner;
+
+
+    public Text healthText;
+
+    [SerializeField]
+    public int TroopsTxt;
 
     void Start()
     {
@@ -34,15 +41,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         float xAxis = Input.GetAxis("Horizontal");
-
-        //                  PAUSE
-
-        if (Input.GetKey(KeyCode.Escape))  //Se Pause estiver disabled -> able
-        {
-            Pause.SetActive(true);
-
-            
-        }
 
         Vector2 currentVelocity = rigidB.velocity;
 
@@ -62,6 +60,9 @@ public class Player : MonoBehaviour
         else
             currBackMod = 1;
 
+
+
+        healthText.text = "" + TroopsTxt;
         anim.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x));
     }
 
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "GOAL")
         {
             Win.SetActive(true);
+            Destroy(Spawner);
         }
     }
 }

@@ -162,7 +162,9 @@ MonoBehaviour:
   moveS: 20
   backwardsMod: 0
   Win: {fileID: 0}
-  Pause: {fileID: 0}
+  Spawner: {fileID: 0}
+  healthText: {fileID: 0}
+  TroopsTxt: 0
 --- !u!114 &633717913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +184,7 @@ MonoBehaviour:
   damage: 0.5
   reach: 10
   reachSpeed: 2
-  attackCooldown: 1
+  attackCooldown: 2
   timeBeforeDestruct: 1
   attackFreeze: 1
 --- !u!114 &2484628193560773815
@@ -197,8 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fc868f39897ab4bb9a44d725e1a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  persianPrefab: {fileID: 0}
-  imortallPrefab: {fileID: 0}
   Lose: {fileID: 0}
   currentState: 7
   nTroops: 300
@@ -209,7 +209,6 @@ MonoBehaviour:
   troopWeight: 0
   massModifier: 0
   defense: 0
-  
 --- !u!114 &891641793344389525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0d87dbd9d9e8c4090519d92b8aed2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   speedMod: 0.5
   atkMod: 0
   defMod: 2

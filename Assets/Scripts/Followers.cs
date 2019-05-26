@@ -9,6 +9,9 @@ public class Followers : MonoBehaviour
     /// Shows the troops behind the leader, and can serve as health display.
     /// </summary>
     Army aScript;
+
+    
+
     [SerializeField]
     GameObject soldierPrefab;
 
