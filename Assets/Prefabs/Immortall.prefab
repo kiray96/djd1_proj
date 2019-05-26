@@ -201,7 +201,6 @@ MonoBehaviour:
   damagePenalty: 0
   defenseModifier: 0
   attackModifier: 0
-  troopWeight: 0
   massModifier: 0
   defense: 0
 --- !u!114 &1195159277
@@ -235,7 +234,7 @@ MonoBehaviour:
   minDistanceToCharge: 0
   minDistanceToBrace: 0
   minDistanceToAttack: 0
-  chanceToDoNothing: 0
+  chanceToDoNothing: 0.2
   agressiveMod: 0
 --- !u!114 &3774765866323310002
 MonoBehaviour:

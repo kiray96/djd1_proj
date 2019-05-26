@@ -160,11 +160,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveS: 20
-  backwardsMod: 0
+  backwardsMod: 0.4
   Win: {fileID: 0}
   Spawner: {fileID: 0}
   healthText: {fileID: 0}
-  TroopsTxt: 0
+  TroopsTxt: 300
 --- !u!114 &633717913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,8 +181,8 @@ MonoBehaviour:
   rangedAttack: 0
   attackPrefab: {fileID: 6959834835003994944, guid: 5f144e40863f26a449552fd9438f34d1,
     type: 3}
-  damage: 0.5
-  reach: 10
+  damage: 3
+  reach: 40
   reachSpeed: 2
   attackCooldown: 2
   timeBeforeDestruct: 1
@@ -200,13 +200,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lose: {fileID: 0}
-  currentState: 7
+  currentState: 1
   nTroops: 300
   speedModifier: 1
   damagePenalty: 0
   defenseModifier: 0
   attackModifier: 0
-  troopWeight: 0
   massModifier: 0
   defense: 0
 --- !u!114 &891641793344389525
@@ -221,10 +220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0d87dbd9d9e8c4090519d92b8aed2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMod: 0.5
-  atkMod: 0
+  speedMod: 0.2
+  atkMod: 1
   defMod: 2
-  massMod: 0
+  massMod: 1.5
   playerControl: 1
 --- !u!114 &6651265904662926811
 MonoBehaviour:
@@ -238,9 +237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1ee9e9df635fc489ca0e399dffc23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMod: 1.5
-  atkMod: 0.4
-  defMod: 0
+  speedMod: 2
+  atkMod: 1.5
+  defMod: 0.2
   massMod: 0
   playerControl: 1
 --- !u!114 &4849313277243751086

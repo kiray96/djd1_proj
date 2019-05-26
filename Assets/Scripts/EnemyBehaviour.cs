@@ -126,12 +126,12 @@ public class EnemyBehaviour : MonoBehaviour
     void ChanceToAttack()
     {
         float a = Random.Range(0, agressiveMod);
-        float b = Random.Range(0, 1);
+        float b = Random.Range(0, agressiveMod);
 
         // When in range there's a chance to attack
         if (distanceToPlayer < minDistanceToAttack)
         {
-            if(a<b) 
+            if(a <= b) 
             atkScript.Strike(GetComponent<Enemy>(), agressiveMod);
         }
 

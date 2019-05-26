@@ -16,7 +16,7 @@ public class FCharge : Formation
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
 
         if (playerControl)
