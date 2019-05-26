@@ -7,9 +7,7 @@ public class Followers : MonoBehaviour
 
     Army aScript;
 
-
-    [SerializeField]
-    GameObject HPBar;
+    
 
     [SerializeField]
     GameObject soldierPrefab;

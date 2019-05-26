@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 17
-  stoppingDistance: 1
+  stoppingDistance: 2
 --- !u!114 &343682308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,12 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fc868f39897ab4bb9a44d725e1a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
-  persianPrefab: {fileID: 4168459224304794717}
-  imortallPrefab: {fileID: 4264108487751422845, guid: b51018b425485dc4889599d80de01cb0,
-    type: 3}
   Lose: {fileID: 0}
-
+  healthText: {fileID: 0}
+  TroopsTxt: 0
   currentState: 0
   nTroops: 3
   speedModifier: 1
@@ -200,12 +197,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControlled: 0
   rangedAttack: 0
-
   attackPrefab: {fileID: 7142979309733015658, guid: fa19b34bd977ae54191963b74067555c,
     type: 3}
   damage: 15
   reach: 2
-
   reachSpeed: 0
   attackCooldown: 1
   timeBeforeDestruct: 0

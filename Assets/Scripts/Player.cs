@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject Win;
 
+    [SerializeField]
+    GameObject Spawner;
+
     void Start()
     {
         rigidB = GetComponent<Rigidbody2D>();
@@ -58,6 +61,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "GOAL")
         {
             Win.SetActive(true);
+            Destroy(Spawner);
         }
         Debug.Log(tag);
     }

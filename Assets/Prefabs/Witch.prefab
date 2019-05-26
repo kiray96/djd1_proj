@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 8753364007828874458}
   - component: {fileID: 1756094705}
   - component: {fileID: 1756094704}
-  - component: {fileID: 3571770014386415242}
   - component: {fileID: 5044852179635681243}
   m_Layer: 13
   m_Name: Witch
@@ -156,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
-  stoppingDistance: 15
+  stoppingDistance: 7
 --- !u!114 &1756094705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,15 +169,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControlled: 0
-  rangedAttack: 0
+  rangedAttack: 1
   attackPrefab: {fileID: 6731192041798751121, guid: ecc07dba3e53b7247a5f93ad1e43af4c,
     type: 3}
   damage: 40
   reach: 16
-  reachSpeed: 0
-  attackCooldown: 0
-  timeBeforeDestruct: 0
-  attackFreeze: 0
+  reachSpeed: 2
+  attackCooldown: 20
+  timeBeforeDestruct: 20
+  attackFreeze: 3
 --- !u!114 &1756094704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,22 +190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be6d858d8e49947a3b0798689dfbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPBar: {fileID: 0}
-  soldierPrefab: {fileID: 0}
+  soldierPrefab: {fileID: 2749249834036557675, guid: 5f1338b1c7e8fdf46b70b141843ae401,
+    type: 3}
   amountToShow: 0
   trailLength: 0
---- !u!114 &3571770014386415242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6551473867504777211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca71d8a14b916a84dbabb2180b6e5f0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5044852179635681243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +210,7 @@ MonoBehaviour:
   healthText: {fileID: 0}
   TroopsTxt: 0
   currentState: 0
-  nTroops: 0
+  nTroops: 1
   speedModifier: 1
   damagePenalty: 0
   defenseModifier: 0
