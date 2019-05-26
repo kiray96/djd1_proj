@@ -163,6 +163,8 @@ MonoBehaviour:
   backwardsMod: 0
   Win: {fileID: 0}
   Spawner: {fileID: 0}
+  healthText: {fileID: 0}
+  TroopsTxt: 0
 --- !u!114 &633717913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,8 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lose: {fileID: 0}
-  healthText: {fileID: 0}
-  TroopsTxt: 300
   currentState: 7
   nTroops: 300
   speedModifier: 1
