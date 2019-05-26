@@ -37,7 +37,19 @@ public class Attack : MonoBehaviour
         currCooldown = 0;
         rb = GetComponent<Rigidbody2D>();
         currAtkfrz = attackFreeze;
-        m = GetComponent<Player>().moveS;
+        if(GetComponent<Player>() != null)
+        {
+
+            m = GetComponent<Player>().moveS;
+
+        }
+
+        else if (GetComponent<Enemy>() != null)
+        {
+            m = GetComponent<Enemy>().speed;
+
+        }
+        
 
     }
 
@@ -60,10 +72,12 @@ public class Attack : MonoBehaviour
             {
 
                 GetComponent<Player>().moveS = 0;
+                GetComponent<Enemy>().speed = 0;
             }
             else
             {
                 GetComponent<Player>().moveS = m;
+                GetComponent<Enemy>().speed = m;
             }
         }
     }
