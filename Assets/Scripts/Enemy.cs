@@ -28,7 +28,10 @@ public class Enemy : MonoBehaviour
 
             transform.position = new Vector3(transform.position.x, transform.position.y, 0.52f);
 
-            anim.SetFloat("AbsVelocityX", Mathf.Abs(target.position.x));
+            if (gameObject.tag == "Wizard")
+            {
+                anim.SetFloat("AbsVelocityX", Mathf.Abs(target.position.x * speed));
+            }
         }
     }
 

@@ -34,7 +34,7 @@ public class Followers : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (gameObject.tag == "Enemy")
+            if (gameObject.tag == "Enemy" && gameObject.tag == "Wizard")
             {
 
                 transform.GetChild(i).transform.localPosition = new Vector3(32 * (i + 1), 0, 0);

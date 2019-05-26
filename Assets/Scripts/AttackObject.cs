@@ -76,7 +76,7 @@ public class AttackObject : MonoBehaviour
     {
 
         
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && collision.gameObject.tag == "Wizard")
         {
 
             collision.gameObject.GetComponent<Army>().TakeDamage(dmg);

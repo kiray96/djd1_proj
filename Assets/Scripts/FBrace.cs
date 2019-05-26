@@ -20,6 +20,7 @@ public class FBrace : Formation
             if(Input.GetAxis("Brace") > 0)
             {
                 ActivateFormation();
+                Debug.Log("Brace");
             }
 
         }
