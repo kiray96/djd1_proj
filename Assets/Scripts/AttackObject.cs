@@ -9,12 +9,15 @@ public class AttackObject : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    [HideInInspector]
     public float dmg, lifeTime, reachSpd, timeBeforeDestruct;
 
     
     public bool isProjectile;
 
+    [HideInInspector]
     public Vector3 origin;
+    [HideInInspector]
     public GameObject creator;
     
 

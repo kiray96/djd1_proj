@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 1195159279}
   - component: {fileID: 1195159278}
   - component: {fileID: 1195159277}
+  - component: {fileID: 1150907271967948477}
+  - component: {fileID: 3774765866323310002}
+  - component: {fileID: 645145704993972325}
   m_Layer: 12
   m_Name: Immortall
   m_TagString: Enemy
@@ -168,13 +171,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fc868f39897ab4bb9a44d725e1a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   persianPrefab: {fileID: 4168459224304794717, guid: a171d36148a18c44592f76250b12f5ac,
     type: 3}
   imortallPrefab: {fileID: 4264108487751422845}
   Lose: {fileID: 0}
+
   currentState: 0
   nTroops: 5
   speedModifier: 1
+  damagePenalty: 0
   defenseModifier: 0
   attackModifier: 0
   troopWeight: 0
@@ -194,13 +200,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerControlled: 0
   rangedAttack: 0
-  attackPrefab: {fileID: 0}
+  attackPrefab: {fileID: 7142979309733015658, guid: fa19b34bd977ae54191963b74067555c,
+    type: 3}
   damage: 30
-  reach: 0
-  reachSpeed: 0
-  attackCooldown: 0
+  reach: 3
+  reachSpeed: 2
+  attackCooldown: 2
   timeBeforeDestruct: 0
-  attackFreeze: 0
+  attackFreeze: 1
 --- !u!114 &1195159277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,3 +224,54 @@ MonoBehaviour:
     type: 3}
   amountToShow: 3
   trailLength: 0
+--- !u!114 &1150907271967948477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264108487751422845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ec5ead74edd5749b30b6aa182ecbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistanceToCharge: 0
+  minDistanceToBrace: 0
+  minDistanceToAttack: 0
+  chanceToDoNothing: 0
+  agressiveMod: 0
+--- !u!114 &3774765866323310002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264108487751422845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0d87dbd9d9e8c4090519d92b8aed2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMod: 0.4
+  atkMod: 0
+  defMod: 0
+  massMod: 0
+  playerControl: 1
+--- !u!114 &645145704993972325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264108487751422845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1ee9e9df635fc489ca0e399dffc23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMod: 2
+  atkMod: 0
+  defMod: 0
+  massMod: 0
+  playerControl: 1

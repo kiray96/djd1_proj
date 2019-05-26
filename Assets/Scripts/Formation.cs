@@ -37,7 +37,7 @@ public class Formation : MonoBehaviour
         massMod = Mathf.Clamp(massMod, 0, 1);
     }
 
-    protected void ActivateFormation()
+    public void ActivateFormation()
     {
         armyScript.currentState = currFormation;
         armyScript.defenseModifier = defMod;
@@ -47,5 +47,6 @@ public class Formation : MonoBehaviour
 
     }
 
+    public void SetControllable(bool controllable) => playerControl = controllable;
    
 }

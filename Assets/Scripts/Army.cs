@@ -6,23 +6,22 @@ public class Army : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject persianPrefab;
-
-    [SerializeField]
-    GameObject imortallPrefab;
-
-    [SerializeField]
-    GameObject witchPrefab;
-
-    [SerializeField]
     GameObject Lose;
+
 
 
     public EnumArmyStates currentState;
     public int nTroops;
+
+    [HideInInspector]
     public float speedModifier = 1;
 
+    
+    public float damagePenalty;
+
+    [HideInInspector]
     public float defenseModifier;
+    [HideInInspector]
     public float attackModifier;
 
     // How much mass is each soldier worth
@@ -31,8 +30,10 @@ public class Army : MonoBehaviour
     
     Animator anim;
 
-
+    [HideInInspector]
     public float massModifier;
+
+    [HideInInspector]
     public float defense;
 
     private void Update()
@@ -69,6 +70,13 @@ public class Army : MonoBehaviour
     {
         if (damage > defense * defenseModifier)
         {
+            if (GetComponent<EnemyBehaviour>() != null)
+            {
+
+                GetComponent<EnemyBehaviour>().agressiveMod -= damagePenalty;
+
+            }
+
             nTroops -= (int)damage;
         }
 
