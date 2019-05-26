@@ -176,11 +176,11 @@ MonoBehaviour:
   rangedAttack: 0
   attackPrefab: {fileID: 7142979309733015658, guid: fa19b34bd977ae54191963b74067555c,
     type: 3}
-  damage: 30
-  reach: 3
+  damage: 35
+  reach: 40
   reachSpeed: 2
   attackCooldown: 2
-  timeBeforeDestruct: 0
+  timeBeforeDestruct: 1
   attackFreeze: 1
 --- !u!114 &1195159279
 MonoBehaviour:
@@ -231,10 +231,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ec5ead74edd5749b30b6aa182ecbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistanceToCharge: 0
-  minDistanceToBrace: 0
-  minDistanceToAttack: 0
-  chanceToDoNothing: 0.2
+  minDistanceToCharge: 7
+  minDistanceToBrace: 4
+  minDistanceToAttack: 1
+  chanceToDoNothing: 0
   agressiveMod: 0
 --- !u!114 &3774765866323310002
 MonoBehaviour:
@@ -248,10 +248,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0d87dbd9d9e8c4090519d92b8aed2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMod: 0.4
-  atkMod: 0
-  defMod: 0
-  massMod: 0
+  speedMod: 0.3
+  atkMod: 1
+  defMod: 3
+  massMod: 1.2
   playerControl: 1
 --- !u!114 &645145704993972325
 MonoBehaviour:
@@ -265,9 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1ee9e9df635fc489ca0e399dffc23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMod: 2
-  atkMod: 0
-  defMod: 0
+  speedMod: 3
+  atkMod: 1.5
+  defMod: 0.4
   massMod: 0
   playerControl: 1
 --- !u!82 &9171020644814775742
